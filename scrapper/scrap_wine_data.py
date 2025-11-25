@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
     # Defines the payload, i.e., filters to be used on the search
     payload = {
-        # "country_codes[]": "fr",
+        "country_codes[]": "fr",
         # "food_ids[]": 20,
         # "grape_ids[]": 3,
         # "grape_filter": "varietal",
@@ -186,9 +186,9 @@ if __name__ == '__main__':
 
         # Opens the output .json file
         try:
-            with open(f'{i}_{output_file}', 'w') as f:
+            with open(f'{i}_{output_file}', 'w', encoding='utf-8') as f:
                 # Dumps the data
-                json.dump(data, f, indent=2)
+                json.dump(data, f, indent=2, ensure_ascii=False)
             
             # Closes the file
             f.close()
